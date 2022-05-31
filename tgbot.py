@@ -15,7 +15,7 @@ def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton('Курс доллара\n USD 💵')
     item2 = types.KeyboardButton('Курс Евро\n EURO 💶')
-    item3 = types.KeyboardButton('Цена золота\n  GOLD ⚱')
+    item3 = types.KeyboardButton('Цена золота\n GOLD ⚱')
     markup.add(item1, item2, item3)
     bot.send_message(message.chat.id, f"Здравствуй, {message.from_user.username}!", reply_markup=markup)
 
@@ -30,7 +30,7 @@ def bot_message(message):
         euro = exchange_rate_euro(euro='')
         bot.send_message(message.chat.id, f'Курс евро ЦБ РФ на {date}:\n' + str(euro))
 
-    if message.text == f'Цена золота\n  GOLD ⚱':
+    if message.text == f'Цена золота\n GOLD ⚱':
         gold = exchange_rate_gold(gold='')
         bot.send_message(message.chat.id, f'Цена золота на {date}:\n' + str(gold))
 
